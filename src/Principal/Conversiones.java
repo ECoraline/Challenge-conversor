@@ -1,10 +1,10 @@
 package Principal;
 
-import java.util.HashMap;
+
 import java.util.Map;
 
 public class Conversiones {
-    private Map<String, Double> tasas = new HashMap<>();
+    private final Map<String, Double> tasas;
     public Conversiones(Datos datos){
         this.tasas = datos.conversion_rates();
     }
@@ -18,7 +18,7 @@ public class Conversiones {
         return dolares*tasas.get("ARS");
     }
     public double arsusd(double argentino){
-        return argentino/tasas.get("USD");
+        return argentino/tasas.get("ARS");
     }
 
     public double usdmxn(double dolares){
@@ -34,11 +34,11 @@ public class Conversiones {
     public double penusd(double soles){
         return soles/tasas.get("PEN");
     }
-    public double usdyen(double dolares){
-        return dolares*tasas.get("YEN");
+    public double usdjpy(double dolares){
+        return dolares*tasas.get("JPY");
     }
-    public double yenusd(double yenes){
-        return yenes/tasas.get("YEN");
+    public double jpyusd(double yenes){
+        return yenes/tasas.get("JPY");
     }
 
 
